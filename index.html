@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <title>Gestión de Proyectos</title>
+</head>
+<body>
+    <h1>Gestión de Trabajadores por Proyecto</h1>
+
+    <form id="form-trabajador">
+        <label for="proyecto">Proyecto:</label>
+        <select id="proyecto">
+            <option value="Puente">Construcción de Puente</option>
+            <option value="Calle">Pavimentación de calle</option>
+            <option value="Edificio">Construcción de un Edificio</option>
+        </select><br><br>
+        
+        <label for="nombre-trabajador">Nombre del Trabajador:</label>
+        <input type="text" id="nombre-trabajador" name="nombre-trabajador"><br><br>
+        
+        <label for="rut-trabajador">RUT del Trabajador:</label>
+        <input type="text" id="rut-trabajador" name="rut-trabajador"><br><br>
+        
+        <label for="cargo-trabajador">Cargo del Trabajador:</label>
+        <input type="text" id="cargo-trabajador" name="cargo-trabajador"><br><br>
+        
+        <button type="button" onclick="agregarTrabajador()">Agregar Trabajador</button>
+    </form>
+
+    <label for="filtro-proyecto">Filtrar por Proyecto:</label>
+    <select id="filtro-proyecto" onchange="filtrarTabla()">
+        <option value="Todos">Todos</option>
+        <option value="Puente">Construcción de Puente</option>
+        <option value="Calle">Pavimentación de Calle</option>
+        <option value="Edificio">Construcción de Edificio</option>
+    </select>
+
+    
+    <br>
+    <label for="busqueda-trabajador">Buscar Trabajador por Nombre:</label>
+    <input type="text" id="busqueda-trabajador" onkeyup="buscarTrabajador()" placeholder="Escribe el nombre...">
+    <table id="tabla-trabajadores">
+        <thead>
+            <tr>
+                <th>Proyecto</th>
+                <th>Nombre del Trabajador</th>
+                <th>RUT del Trabajador</th>
+                <th>Cargo del Trabajador</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+        </tbody>
+    </table>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
